@@ -4,6 +4,9 @@
  * @version 1.0
  */
 public class Student {
+    /**
+     * this Student class can managed student name and GPA list.
+     */
     private String name;
     private static double gpa;
 

@@ -8,7 +8,9 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class ClientService implements ICollection{
-
+    /**
+     * this ClientsService class can manage clients name list.
+     */
     private int maxNum;
     private Queue clients;
 

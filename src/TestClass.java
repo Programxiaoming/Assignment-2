@@ -1,7 +1,6 @@
 /** Driver class for test
  * @version 1.0
  * @author  Xiaoming Su
- * @see ICollection,ClientService,ShoppingBag,DeansList,Student
  */
 
 public class TestClass {
@@ -10,6 +9,9 @@ public class TestClass {
      * @param args stores the incoming command line arguments for the program.
      */
     public static void main(String[] args) {
+        /**
+         * Driver test for part1, part2 and part3 classes.
+         */
 
         ClientService cl1 = new ClientService(4);
         cl1.add("Tom");
@@ -33,15 +35,12 @@ public class TestClass {
         DeansList dl1 = new DeansList();
         Student st1 = new Student("Tom",3.0);
         Student st2 = new Student("Jerry", 3.3);
-        Student st3 = new Student("Mary", 4.0);
+        Student st3 = new Student("Mary", 3.5);
         Student st4 = new Student("Jane", 3.9);
         dl1.add(st1);
         dl1.add(st2);
         dl1.add(st3);
         dl1.add(st4);
-        System.out.println(dl1.getNext());
-        System.out.println(dl1.getNext());
-        System.out.println(dl1.getNext());
         System.out.println(dl1.getNext());
         System.out.println("=================================================");
         System.out.println();

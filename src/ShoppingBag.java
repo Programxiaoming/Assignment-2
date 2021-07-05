@@ -4,6 +4,9 @@
  * @version 1.0
  */
 public class ShoppingBag implements ICollection{
+    /**
+     * this ShoppingBag class can be added and removed items.
+     */
     private int maxNum;
     private Object[] stack;
     private int index = 0;
