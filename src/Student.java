@@ -1,8 +1,11 @@
-// Student class
-
+/**
+ * Student class
+ * @author Xiaoming Su
+ * @version 1.0
+ */
 public class Student {
     private String name;
-    private double gpa;
+    private static double gpa;
 
     public Student(String name, double gpa){
         this.name = name;

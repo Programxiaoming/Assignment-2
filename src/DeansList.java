@@ -1,40 +1,55 @@
-// Dean's list class
+/**
+ * Dean's list class
+ * @author Xiaoming Su
+ * @version 1.0
+ */
+import java.util.ArrayList;
 
 public class DeansList implements ICollection{
 
-    private int maxNumber;
-    private Object[] stack;
+    private int maxNum;
+    private Object[] arrayList;
     private int index = 0;
+    ArrayList deansList;
+
     public DeansList(){
 
     }
 
-    public DeansList(int maxNumber) throws ArithmeticException{
-        if(maxNumber <= 0)
-            throw new ArithmeticException("Max number can't be over 5 ");
-        else System.out.println("The Dean's list max number is " + maxNumber);
-        this.maxNumber = maxNumber;
-        stack = new Object[maxNumber];
+    public DeansList(int max) throws ArithmeticException{
+        if(max <= 0)
+            throw new ArithmeticException("the dean's list should be above 0 ");
+        else System.out.println("The Dean's list max number is " + max);
+        this.maxNum = max;
+        arrayList = new Object[max];
+
     }
 
     @Override
     public boolean add(Object newItem){
-        if(index == maxNumber){
+        if(index == maxNum){
             return false;
         }
         else{
-            stack[index] = newItem;
+            arrayList[index] = newItem;
             index++;
             return true;
         }
     }
 
-    @Override
+   @Override
     public Object getNext(){
-        if(index == 0){
-            return null;
+        if(deansList.size() == 0){
+            return false;
         }else {
-            return stack[--index];
+            int index = 0;
+            for (int i = 0; i < deansList.size(); i++) {
+                if(deansList.get(i).getGpa() > deansList.get(index).getGpa()) {
+                    index = i;
+                }
+            }
+            return deansList.remove(index);
         }
     }
+
 }

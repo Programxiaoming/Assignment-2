@@ -1,30 +1,33 @@
-// ClientService class
-
+/**
+ * ClientService class
+ * @author Xiaoming Su
+ * @version 1.0
+ */
 
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class ClientService implements ICollection{
 
-    private int maxNumber;
+    private int maxNum;
     private Queue clients;
 
     public ClientService(){
 
     }
 
-    public ClientService(int maxNumber) throws StackOverflowError{
-        if(maxNumber <= 0) {
+    public ClientService(int max) throws StackOverflowError{
+        if(max <= 0) {
             throw new StackOverflowError("maxNumber less or equal than zero");
         }
-        this.maxNumber = maxNumber;
+        this.maxNum = max;
         clients = new LinkedList<String>();
     }
 
     @Override
     public boolean add(Object newItem){
-        if(clients.size() < maxNumber){
-            clients.add((String)newItem);
+        if(clients.size() < maxNum){
+            clients.add(newItem);
             return true;
         }
         return false;

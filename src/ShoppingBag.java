@@ -1,24 +1,27 @@
-// ShoppingBag class
-
+/**
+ * ShoppingBag class
+ * @author Xiaoming Su
+ * @version 1.0
+ */
 public class ShoppingBag implements ICollection{
-    private int maxNumber;
+    private int maxNum;
     private Object[] stack;
     private int index = 0;
     public ShoppingBag(){
 
     }
 
-    public ShoppingBag(int maxNumber) throws ArithmeticException{
-        if(maxNumber <= 0)
-            throw new ArithmeticException("Max number can't less or equal 0.");
-        else System.out.println("The shopping bag max number is " + maxNumber);
-        this.maxNumber = maxNumber;
-        stack = new Object[maxNumber];
+    public ShoppingBag(int max) throws ArithmeticException{
+        if(max <= 0)
+            throw new ArithmeticException("Maximum number can't less or equal 0.");
+        else System.out.println("The max number of shopping bag is " + max);
+        this.maxNum = max;
+        stack = new Object[max];
     }
 
     @Override
     public boolean add(Object newItem){
-        if(index == maxNumber){
+        if(index == maxNum){
             return false;
         }
         else{
